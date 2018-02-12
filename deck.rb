@@ -23,10 +23,6 @@ class Deck
     @cards.shuffle
   end
 
-  def draw
-    @cards.pop
-  end
-
   def remaining
     cards.length
   end
