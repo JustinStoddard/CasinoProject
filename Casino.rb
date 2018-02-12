@@ -1,6 +1,8 @@
 # This is the User Interface
 require_relative 'customer'
 require_relative 'dice_game'
+require_relative 'roulette'
+require_relative 'spoke'
 require 'pry'
 
 
@@ -32,6 +34,8 @@ attr_accessor :customer
         case choice
             when 1
             when 2
+                Roulette.new(@customer)
+                casino_menu
             when 3
                 Dice.new(@customer)
                 casino_menu

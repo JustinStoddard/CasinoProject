@@ -10,13 +10,13 @@
 require_relative 'spoke'
 require 'pry'
 class Roulette
-    attr_accessor :numbers, :wheel
+    attr_accessor :numbers, :wheel, :customer
         
     
-    def initialize
+    def initialize(customer)
         @numbers = []
         @wheel = []
-        @wallet = 100
+        @customer = customer
         generate_wheel
         bets_menu
     end
@@ -75,11 +75,11 @@ class Roulette
         
     end
     def bet_on_zero_game
-        puts "You have #{@wallet} in your wallet"
+        puts "You have #{@customer.wallet} in your wallet"
         puts " "
         puts "How much would you like to bet:"
         bet = gets.to_i
-        if bet <= @wallet
+        if bet <= @customer.wallet
             puts 'press any key to spin the Roulette Wheel!'
             STDIN.gets                                                                                                              
             print "            \r"
