@@ -23,7 +23,4 @@ class Deck
     @cards.shuffle
   end
 
-  def remaining
-    cards.length
-  end
 end

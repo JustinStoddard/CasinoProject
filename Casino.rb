@@ -4,6 +4,7 @@ require_relative 'dice_game'
 require_relative 'roulette'
 require_relative 'spoke'
 require_relative 'casino_main'
+require_relative 'blackjack'
 require 'pry'
 
 
@@ -40,6 +41,7 @@ attr_accessor :customer
             when 3
                 Dice.new(@customer)
             when 4
+                Blackjack.new(@customer)
             when 5
             when 6
                 exit_menu
