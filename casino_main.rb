@@ -54,7 +54,7 @@ end
       high_low
     else
       puts "Sorry, you LOSE!".magenta
-      @factor2 -= @bet
+      @factor2 = @bet - @bet 
       puts "You lost #{@factor2} money!"
       @customer.wallet -= @factor2
       playAgain
