@@ -54,7 +54,7 @@ end
       high_low
     else
       puts "Sorry, you LOSE!".magenta
-      @factor2 = @bet - @bet 
+      @factor2 = @bet - @bet
       puts "You lost #{@factor2} money!"
       @customer.wallet -= @factor2
       playAgain
@@ -65,7 +65,6 @@ end
             answer = gets.strip
             if answer == "n"
               puts "Ok, returning to main menu.".magenta #return to main menu
-              exit
             elsif answer == "y"
               @num = rand 10
               @attempts = 3
