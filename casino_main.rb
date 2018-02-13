@@ -65,6 +65,7 @@ end
             answer = gets.strip
             if answer == "n"
               puts "Ok, returning to main menu.".magenta #return to main menu
+              casino_menu
             elsif answer == "y"
               @num = rand 10
               @attempts = 3
