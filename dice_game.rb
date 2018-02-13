@@ -33,7 +33,7 @@ a8"    `Y88 88 a8"     "" a8P_____88
         
         case choice
             when 1
-                roll
+                bet
             when 2 
                 dice_rules
             when 3
@@ -56,7 +56,7 @@ a8"    `Y88 88 a8"     "" a8P_____88
 
         case choice
             when 1
-                roll
+                bet
             when 2
                 dice_welcome
             else
@@ -64,6 +64,13 @@ a8"    `Y88 88 a8"     "" a8P_____88
                 dice_rules
         end
     end
+
+     def bet
+         puts "===================="
+         puts "How much do you bet?"
+         @bet = gets.strip.to_i
+         roll
+     end
 
     def roll
         @dice1 = rand(1..6)
@@ -100,38 +107,47 @@ a8"    `Y88 88 a8"     "" a8P_____88
             when 4 
                 puts "!!You Win!!".green
                 puts "Your reward is $500"
-                @customer.wallet += 500
+                @customer.wallet += 500 
+                @customer.wallet += @bet * 5
             when 7
                 puts "!!You Win!!".green
                 puts "Your reward is $150"
                 @customer.wallet += 150
+                @customer.wallet += @bet * 2
             when 9
                 puts "!!You Win!!".green
                 puts "Your reward is $30"
                 @customer.wallet += 30
+                @customer.wallet += @bet * 2
             when 12
                 puts "!!You Win!!".green
                 puts "Your reward is $15"
                 @customer.wallet += 15
+                @customer.wallet += @bet 
             when 14
                 puts "!!You Win!!".green
                 puts "Your reward is $15"
                 @customer.wallet += 15
+                @customer.wallet += @bet
             when 20
                 puts "!!You Win!!".green
                 puts "Your reward is $150"
                 @customer.wallet += 150
+                @customer.wallet += @bet * 2
             when 23
                 puts "!!You Win!!".green
                 puts "Your reward is $50"
                 @customer.wallet += 50
+                @customer.wallet += @bet * 3
             when 24
                 puts "!!You Win!!".green
                 puts "Your reward is $500"
                 @customer.wallet += 500
+                @customer.wallet += @bet * 5
             else
                 puts "You lose! Give Me $15!".red
                 @customer.wallet -= 15
+                @customer.wallet -= @bet
         end
         bet_again
     end
@@ -150,7 +166,7 @@ a8"    `Y88 88 a8"     "" a8P_____88
         case choice
             when 1
                 if @customer.wallet > 14
-                    roll
+                    bet
                 else
                     puts "You dont have any money left!"
                     bet_again
