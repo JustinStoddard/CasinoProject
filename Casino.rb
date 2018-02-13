@@ -28,7 +28,7 @@ attr_accessor :customer
         puts "1) High Low"
         puts "2) Roulette"
         puts "3) Dice"
-        puts "4) Black Jack (Under Construction)"
+        puts "4) Black Jack"
         puts "5) Poker (Under Constuction)"
         puts "6) Exit Casino"
         choice = gets.strip.to_i
