@@ -13,9 +13,19 @@ class Dice
     end
     
     def dice_welcome
-        puts "===================="
-        puts "     Dice Game      "
-        puts "===================="
+        puts "===================================="
+        puts  <<-POEM 
+         88 88                        
+         88 ""                        
+         88                           
+ ,adPPYb,88 88  ,adPPYba,  ,adPPYba,  
+a8"    `Y88 88 a8"     "" a8P_____88  
+8b       88 88 8b         8PP"""""""  
+"8a,   ,d88 88 "8a,   ,aa "8b,   ,aa  
+ `"8bbdP"Y8 88  `"Ybbd8"'  `"Ybbd8"'
+                    
+          POEM
+        puts "===================================="
         puts "1) Roll Dice"
         puts "2) Read Rules"
         puts "3) Exit Game"
@@ -64,7 +74,13 @@ class Dice
     end
 
     def show_dice
-        puts "Your roll was #{@dice1} #{@dice2} #{@dice3} #{@dice4}"
+        puts <<-SHOW
+                     _________   _________   _________   _________
+                    |         | |         | |         | |         |
+    Your roll was:  |    #{@dice1}    | |    #{@dice2}    | |    #{@dice3}    | |    #{@dice4}    |
+                    |         | |         | |         | |         |
+                     ---------   ---------   ---------   ---------
+        SHOW
         sum_of_dice
     end
 
@@ -72,36 +88,50 @@ class Dice
         
         @factor = @dice1 + @dice2 + @dice3 + @dice4
 
-        puts "Your Sum is #{@factor}"
+        puts <<-SHOW
+                     __________
+                    |          |
+    Your Sum is:    |    #{@factor}    |
+                    |          |
+                     ----------
+        SHOW
 
         case @factor
             when 4 
-                puts "You Win"
-                puts "Your reward is $20"
-                @customer.wallet += 20
+                puts "!!You Win!!".green
+                puts "Your reward is $500"
+                @customer.wallet += 500
             when 7
-                puts "You Win"
-                puts "Your reward is $15"
-                @customer.wallet += 15
-            when 11
-                puts "You Win"
-                puts "Your reward is $25"
-                @customer.wallet += 25
-            when 12
-                puts "You Win"
-                puts "Your reward is $5"
-                @customer.wallet += 5
-            when 20
-                puts "You Win"
-                puts "Your reward is $10"
-                @customer.wallet += 10
-            when 24
-                puts "You Win"
+                puts "!!You Win!!".green
+                puts "Your reward is $150"
+                @customer.wallet += 150
+            when 9
+                puts "!!You Win!!".green
                 puts "Your reward is $30"
                 @customer.wallet += 30
+            when 12
+                puts "!!You Win!!".green
+                puts "Your reward is $15"
+                @customer.wallet += 15
+            when 14
+                puts "!!You Win!!".green
+                puts "Your reward is $15"
+                @customer.wallet += 15
+            when 20
+                puts "!!You Win!!".green
+                puts "Your reward is $150"
+                @customer.wallet += 150
+            when 23
+                puts "!!You Win!!".green
+                puts "Your reward is $50"
+                @customer.wallet += 50
+            when 24
+                puts "!!You Win!!".green
+                puts "Your reward is $500"
+                @customer.wallet += 500
             else
-                puts "You lose! Give Me $20!"
-                @customer.wallet -= 20
+                puts "You lose! Give Me $15!".red
+                @customer.wallet -= 15
         end
         bet_again
     end
