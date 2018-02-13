@@ -149,7 +149,7 @@ a8"    `Y88 88 a8"     "" a8P_____88
 
         case choice
             when 1
-                if @customer.wallet > 0
+                if @customer.wallet > 14
                     roll
                 else
                     puts "You dont have any money left!"
