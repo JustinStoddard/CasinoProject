@@ -3,6 +3,7 @@ require_relative 'customer'
 require_relative 'dice_game'
 require_relative 'roulette'
 require_relative 'spoke'
+require_relative 'casino_main'
 require 'pry'
 
 
@@ -33,12 +34,11 @@ attr_accessor :customer
 
         case choice
             when 1
+                High_low.new(@customer)
             when 2
                 Roulette.new(@customer)
-                casino_menu
             when 3
                 Dice.new(@customer)
-                casino_menu
             when 4
             when 5
             when 6
@@ -46,6 +46,7 @@ attr_accessor :customer
             else
                 puts "Invaild Input"
         end
+        casino_menu
     end
 
     def exit_menu

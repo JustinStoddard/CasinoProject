@@ -285,5 +285,5 @@ class Roulette
     #     #Take me to Casino Menu
     # end
 end
-Roulette.new.bets_menu
+
 
