@@ -29,8 +29,7 @@ attr_accessor :customer
         puts "2) Roulette"
         puts "3) Dice"
         puts "4) Black Jack"
-        puts "5) Poker (Under Constuction)"
-        puts "6) Exit Casino"
+        puts "5) Exit Casino"
         choice = gets.strip.to_i
 
         case choice
@@ -43,7 +42,6 @@ attr_accessor :customer
             when 4
                 Blackjack.new(@customer)
             when 5
-            when 6
                 exit_menu
             else
                 puts "Invaild Input"
